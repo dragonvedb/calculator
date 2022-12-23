@@ -1,0 +1,46 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+    box-sizing: border-box;
+	vertical-align: baseline;
+}
+
+#device {
+    height: 600px;
+    width: 400px;
+
+    background-color: gray;
+}
+
+#top {
+    height: 100px;
+    display: flex;
+}
+
+#display {
+    height: 50px;
+    width: 400px;
+    align-self: center;
+    text-align: end;
+
+    background-color: white;
+}
+
+#bottom {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.socket,
+.socket button {
+    height: 100px;
+    width: 100px;
+    border: gray 1px solid;
+}
+
+.btn.equalize {
+    width: 200px;
+}
