@@ -9,8 +9,8 @@
 }
 
 #device {
-    height: 600px;
-    width: 400px;
+    height: 650px;
+    width: 430px;
 
     background-color: gray;
 }
@@ -22,25 +22,28 @@
 
 #display {
     height: 50px;
-    width: 400px;
+    width: 430px;
     align-self: center;
     text-align: end;
+    font-size: 1.8em;
 
     background-color: white;
+    border: black 2px solid;
 }
 
 #bottom {
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
-.socket,
+/*.socket,*/
 .socket button {
     height: 100px;
     width: 100px;
-    border: gray 1px solid;
+    border: black 2px solid;
 }
 
 .btn.equalize {
-    width: 200px;
+    width: 210px;
 }
