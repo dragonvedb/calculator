@@ -13,7 +13,6 @@ function updateDisplay () {
 const numButtons = document.querySelectorAll('.btn.num');
 for (const button of numButtons) {
     button.addEventListener('click', (e) => {
-        if(operator) displayNumber = [];
         displayNumber.push(e.target.textContent);
         updateDisplay();  
     })
@@ -24,6 +23,7 @@ for (const button of opsButtons) {
     button.addEventListener('click', (e) => {
         operator = e.target.textContent;
         operand1 = parseInt(displayNumber.join(''));
+        displayNumber = [];
     })
 }
 
