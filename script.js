@@ -30,13 +30,19 @@ for (const button of opsButtons) {
 const equalizeButton = document.querySelector('.btn.equalize');
 equalizeButton.addEventListener('click', () => {
     operand2 = parseInt(displayNumber.join(''));
-    displayNumber = [...String(operate(operand1, operand2, operator))];
+    result = operate(operand1, operand2, operator)
+    displayNumber = [...String(result)];
     updateDisplay();
 })
 
 const clearButton = document.querySelector('.btn.clear');
 clearButton.addEventListener('click', () => {
-    display.textContent = '';
+    displayNumber = [];
+    updateDisplay();
+    operand1 = null;
+    operand2 = null;
+    operator = null;
+    result = null;
 })
 
 const add = (a, b) => a + b;
