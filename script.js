@@ -1,33 +1,37 @@
-let operand1 = [];
-let operand2 = [];
+let operand1;
+let operand2;
 let operator;
+let result;
 
 const display = document.querySelector('#display');
+let displayNumber = [];
+
+function updateDisplay () {
+    display.textContent = displayNumber.join('');
+}
 
 const numButtons = document.querySelectorAll('.btn.num');
 for (const button of numButtons) {
     button.addEventListener('click', (e) => {
-        if (operator) {
-            operand1.push(e.target.textContent);
-            display.textContent = operand1.join('');
-        } else {
-            operand2.push(e.target.textContent);
-            display.textContent = operand2.join('');  
-        }
-        
+        if(operator) displayNumber = [];
+        displayNumber.push(e.target.textContent);
+        updateDisplay();  
     })
 }
 
-const opsButtons = document.querySelector('.btn.operator');
+const opsButtons = document.querySelectorAll('.btn.operator');
 for (const button of opsButtons) {
     button.addEventListener('click', (e) => {
         operator = e.target.textContent;
+        operand1 = parseInt(displayNumber.join(''));
     })
 }
 
 const equalizeButton = document.querySelector('.btn.equalize');
 equalizeButton.addEventListener('click', () => {
-    
+    operand2 = parseInt(displayNumber.join(''));
+    displayNumber = [...String(operate(operand1, operand2, operator))];
+    updateDisplay();
 })
 
 const clearButton = document.querySelector('.btn.clear');
