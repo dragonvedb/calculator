@@ -21,9 +21,19 @@ for (const button of numButtons) {
 const opsButtons = document.querySelectorAll('.btn.operator');
 for (const button of opsButtons) {
     button.addEventListener('click', (e) => {
-        operator = e.target.textContent;
-        operand1 = parseInt(displayNumber.join(''));
-        displayNumber = [];
+        if (operator) {
+            operand2 = parseInt(displayNumber.join(''));
+            result = operate(operand1, operand2, operator)
+            displayNumber = [...String(result)];
+            updateDisplay();
+            operand1 = result;
+            operand2 = null;
+            operator = e.target.textContent;
+        } else {
+            operator = e.target.textContent;
+            operand1 = parseInt(displayNumber.join(''));
+            displayNumber = [];
+        }
     })
 }
 
@@ -33,6 +43,9 @@ equalizeButton.addEventListener('click', () => {
     result = operate(operand1, operand2, operator)
     displayNumber = [...String(result)];
     updateDisplay();
+    operand1 = null;
+    operand2 = null;
+    operator = null;
 })
 
 const clearButton = document.querySelector('.btn.clear');
