@@ -49,13 +49,15 @@ for (const button of opsButtons) {
 
 const equalizeButton = document.querySelector('.btn.equalize');
 equalizeButton.addEventListener('click', () => {
-    operand2 = parseInt(displayNumber.join(''));
-    result = operate(operand1, operand2, operator)
-    displayNumber = [...String(result)];
-    updateDisplay();
-    operand1 = null;
-    operand2 = null;
-    operator = null;
+    if (operand2) {
+        operand2 = parseInt(displayNumber.join(''));
+        result = operate(operand1, operand2, operator)
+        displayNumber = [...String(result)];
+        updateDisplay();
+        operand1 = null;
+        operand2 = null;
+        operator = null;
+    }
 })
 
 const clearButton = document.querySelector('.btn.clear');
