@@ -6,8 +6,11 @@ let result;
 const display = document.querySelector('#display');
 let displayNumber = [];
 
+const smallDisplay = document.querySelector('#small-display');
+
 function updateDisplay () {
     display.textContent = displayNumber.join('');
+    smallDisplay.textContent = `${operand1 ? operand1 : ''} ${operator ? operator : ''} ${operand2 ? operand2 : ''} ${result ? '=' : ''}`
 }
 
 const numButtons = document.querySelectorAll('.btn.num');
