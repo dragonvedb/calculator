@@ -49,7 +49,7 @@ for (const button of opsButtons) {
 
 const equalizeButton = document.querySelector('.btn.equalize');
 equalizeButton.addEventListener('click', () => {
-    if (operand2) {
+    if (operand1 && operator) {
         operand2 = parseInt(displayNumber.join(''));
         result = operate(operand1, operand2, operator)
         displayNumber = [...String(result)];
