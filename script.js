@@ -70,6 +70,12 @@ clearButton.addEventListener('click', () => {
     result = null;
 })
 
+const backspaceButton = document.querySelector('.btn.backspace');
+backspaceButton.addEventListener('click', () => {
+    displayNumber.pop();
+    updateDisplay();
+})
+
 const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
