@@ -25,6 +25,7 @@
     width: 430px;
     align-self: center;
     text-align: end;
+    font-family: 'Share Tech Mono', monospace;
     font-size: 1.8em;
 
     background-color: white;
@@ -49,6 +50,8 @@
     height: 100px;
     width: 100px;
     border: black 2px solid;
+    font-family: 'Syne Mono', monospace;
+    font-size: 2.5em;
 }
 
 .btn.equalize {
