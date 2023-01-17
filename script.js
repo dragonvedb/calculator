@@ -82,6 +82,8 @@ const multiply = (a, b) => a * b;
 const divide = (a, b) => a / b;
 
 function operate(a, b, operator) {
+    if (!(b)) return a;
+    
     switch (operator) {
         case '+':
             return add(a, b);
