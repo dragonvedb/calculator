@@ -13,6 +13,14 @@ function updateDisplay () {
 const numButtons = document.querySelectorAll('.btn.num');
 for (const button of numButtons) {
     button.addEventListener('click', (e) => {
+        if (result) {
+            displayNumber = [];
+            operand1 = null;
+            operand2 = null;
+            operator = null;
+            result = null;
+        }
+
         displayNumber.push(e.target.textContent);
         updateDisplay();  
     })
@@ -21,19 +29,21 @@ for (const button of numButtons) {
 const opsButtons = document.querySelectorAll('.btn.operator');
 for (const button of opsButtons) {
     button.addEventListener('click', (e) => {
-        if (operator) {
-            operand2 = parseInt(displayNumber.join(''));
-            result = operate(operand1, operand2, operator)
-            displayNumber = [...String(result)];
-            updateDisplay();
-            operand1 = result;
+        if (result) {
+            operand1 = result
             operand2 = null;
-            operator = e.target.textContent;
+            result = null;
+        } else if (operator) {
+            operand2 = parseInt(displayNumber.join(''));
+            operand1 = operate(operand1, operand2, operator);
+            operand2 = null;
         } else {
-            operator = e.target.textContent;
             operand1 = parseInt(displayNumber.join(''));
-            displayNumber = [];
         }
+
+        operator = e.target.textContent;
+        displayNumber = [];
+        updateDisplay();
     })
 }
 
