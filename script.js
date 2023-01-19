@@ -64,6 +64,7 @@ for (const button of opsButtons) {
             operand2 = null;
         } else {
             operand1 = parseFloat(displayNumber.join(''));
+            if (isNaN(operand1)) operand1 = 0;
         }
 
         operator = e.target.textContent;
