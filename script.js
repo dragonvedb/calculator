@@ -29,6 +29,28 @@ for (const button of numButtons) {
     })
 }
 
+const dotButton = document.querySelector('.btn.dot');
+dotButton.addEventListener('click', () => {
+        if (result) {
+            displayNumber = [];
+            operand1 = null;
+            operand2 = null;
+            operator = null;
+            result = null;
+        }
+
+        if (displayNumber.length === 0) {
+            displayNumber.push('0', '.');
+            updateDisplay();
+            return;
+        }
+
+        if (displayNumber.includes('.')) return;
+
+        displayNumber.push('.');
+        updateDisplay();  
+    })
+
 const opsButtons = document.querySelectorAll('.btn.operator');
 for (const button of opsButtons) {
     button.addEventListener('click', (e) => {
