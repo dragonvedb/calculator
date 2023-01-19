@@ -88,11 +88,11 @@ equalizeButton.addEventListener('click', () => {
 const clearButton = document.querySelector('.btn.clear');
 clearButton.addEventListener('click', () => {
     displayNumber = [];
-    updateDisplay();
     operand1 = null;
     operand2 = null;
     operator = null;
     result = null;
+    updateDisplay();
 })
 
 const backspaceButton = document.querySelector('.btn.backspace');
