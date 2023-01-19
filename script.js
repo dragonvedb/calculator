@@ -99,6 +99,9 @@ clearButton.addEventListener('click', () => {
 const backspaceButton = document.querySelector('.btn.backspace');
 backspaceButton.addEventListener('click', () => {
     displayNumber.pop();
+
+    if (displayNumber[displayNumber.length - 1] == '-') displayNumber.pop();
+
     updateDisplay();
 })
 
