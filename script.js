@@ -108,16 +108,16 @@ clearButton.addEventListener('click', () => {
     updateDisplay();
 })
 
-/*const backspaceButton = document.querySelector('.btn.backspace');
+const backspaceButton = document.querySelector('.btn.backspace');
 backspaceButton.addEventListener('click', () => {
-    if (isNaN(result)) {
+    if (isNaN(displayNumber[0]) && displayNumber[0] !== '-') {
         displayNumber = [];
     } else displayNumber.pop();
     if (displayNumber[displayNumber.length - 1] == '-') displayNumber.pop();
 
     result = null;
     updateDisplay();
-})*/
+})
 
 /*const invertButton = document.querySelector('.btn.polarity');
 invertButton.addEventListener('click', () => {
