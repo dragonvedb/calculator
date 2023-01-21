@@ -111,20 +111,12 @@ backspaceButton.addEventListener('click', () => {
     updateDisplay();
 })
 
-/*const invertButton = document.querySelector('.btn.polarity');
+const invertButton = document.querySelector('.btn.polarity');
 invertButton.addEventListener('click', () => {
     if (displayNumber.length == 0) {
         displayNumber.push('-', '0');
         updateDisplay();
         return;
-    }
-
-    if (result !== null) {
-        if (isNaN(result)) displayNumber = ['0'];
-        operand1 = null;
-        operand2 = null;
-        operator = null;
-        result = null;
     }
 
     if (displayNumber[0] == '-') {
@@ -133,8 +125,9 @@ invertButton.addEventListener('click', () => {
         displayNumber.unshift('-')
     }
 
+    result = null;
     updateDisplay();
-})*/
+})
 
 const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
