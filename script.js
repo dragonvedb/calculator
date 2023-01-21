@@ -80,13 +80,12 @@ const equalizeButton = document.querySelector('.btn.equalize');
 equalizeButton.addEventListener('click', () => {
     if (operand1 !== null && operator && displayNumber.length) {
         operand2 = parseFloat(displayNumber.join(''));
-        result = operate(operand1, operand2, operator)
-        displayNumber = [...String(result)];
+        operate(operand1, operand2, operator)
         updateDisplay();
         operand1 = null;
         operand2 = null;
         operator = null;
-        if (isNaN(result)) result = 0;
+        if (isNaN(result)) result = null;
     }
 })
 
@@ -139,17 +138,20 @@ invertButton.addEventListener('click', () => {
 const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
-const divide = (a, b) => /*(b != 0) ? a / b : 'CHA0S REIGNS'*/ a / b;
+const divide = (a, b) => a / b;
 
 function operate(a, b, operator) {
     switch (operator) {
         case '+':
-            return add(a, b);
+            result = add(a, b);
         case '-':
-            return subtract(a, b);
+            result = subtract(a, b);
         case 'x':
-            return multiply(a, b);
+            result = multiply(a, b);
         case '\/':
-            return divide(a, b);
+            if (!b) result = 'CHA0S RE1GNS';
+            result = divide(a, b);
     }
+
+    displayNumber = [...String(result)];
 }
