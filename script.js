@@ -29,7 +29,7 @@ for (const button of numButtons) {
     })
 }
 
-/*const dotButton = document.querySelector('.btn.dot');
+const dotButton = document.querySelector('.btn.dot');
 dotButton.addEventListener('click', () => {
         if (result !== null) {
             displayNumber = [];
@@ -49,7 +49,7 @@ dotButton.addEventListener('click', () => {
 
         displayNumber.push('.');
         updateDisplay();  
-    })*/
+    })
 
 const opsButtons = document.querySelectorAll('.btn.operator');
 for (const button of opsButtons) {
@@ -61,7 +61,6 @@ for (const button of opsButtons) {
         } else if (operand1 !== null && operator && displayNumber.length) {
             operand2 = parseFloat(displayNumber.join(''));
             operate(operand1, operand2, operator)
-            updateDisplay();
             operand1 = null;
             operand2 = null;
             operator = null;
@@ -90,7 +89,6 @@ equalizeButton.addEventListener('click', () => {
     if (operand1 !== null && operator && displayNumber.length) {
         operand2 = parseFloat(displayNumber.join(''));
         operate(operand1, operand2, operator)
-        updateDisplay();
         operand1 = null;
         operand2 = null;
         operator = null;
@@ -174,10 +172,12 @@ function operate(a, b, operator) {
     } if (result.toString().length > 16) {
         let cutoff = 15;
         if (result.toString().includes('-')) cutoff = 16;
-        result = result.toFixed(cutoff - Math.trunc(result).toString().length)
+        result = Number(result.toFixed(cutoff - Math.trunc(result).toString().length))
     }
 
     displayNumber = [...String(result)];
+    updateDisplay();
+    if (isNaN(result)) displayNumber = [];
 }
 
 1000000000000000
