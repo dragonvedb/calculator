@@ -10,7 +10,7 @@ const smallDisplay = document.querySelector('#small-display');
 
 function updateDisplay () {
     display.textContent = displayNumber.join('');
-    smallDisplay.textContent = `${(operand1 !== null) ? operand1 : ''} ${operator ? operator : ''} ${(operand2 !== null) ? operand2 : ''} ${result !== 0 ? '=' : ''}`
+    smallDisplay.textContent = `${(operand1 !== null) ? operand1 : ''} ${operator ? operator : ''} ${(operand2 !== null) ? operand2 : ''} ${result !== null ? '=' : ''}`
 }
 
 const numButtons = document.querySelectorAll('.btn.num');
@@ -29,7 +29,7 @@ for (const button of numButtons) {
     })
 }
 
-const dotButton = document.querySelector('.btn.dot');
+/*const dotButton = document.querySelector('.btn.dot');
 dotButton.addEventListener('click', () => {
         if (result !== null) {
             displayNumber = [];
@@ -49,7 +49,7 @@ dotButton.addEventListener('click', () => {
 
         displayNumber.push('.');
         updateDisplay();  
-    })
+    })*/
 
 const opsButtons = document.querySelectorAll('.btn.operator');
 for (const button of opsButtons) {
@@ -58,11 +58,13 @@ for (const button of opsButtons) {
             operand1 = result;
             operand2 = null;
             result = null;
-        } else if (operator) {
+        /*} else if (operator) {
             operand2 = parseFloat(displayNumber.join(''));
             if (isNaN(operand2)) operand2 = 0;
             operand1 = operate(operand1, operand2, operator);
-            operand2 = null;
+            operand2 = null;*/
+        } else if (operand1 !== null) {
+
         } else {
             operand1 = parseFloat(displayNumber.join(''));
             if (isNaN(operand1)) operand1 = 0;
@@ -88,7 +90,7 @@ equalizeButton.addEventListener('click', () => {
     }
 })
 
-const clearButton = document.querySelector('.btn.clear');
+/*const clearButton = document.querySelector('.btn.clear');
 clearButton.addEventListener('click', () => {
     displayNumber = [];
     operand1 = null;
@@ -96,9 +98,9 @@ clearButton.addEventListener('click', () => {
     operator = null;
     result = null;
     updateDisplay();
-})
+})*/
 
-const backspaceButton = document.querySelector('.btn.backspace');
+/*const backspaceButton = document.querySelector('.btn.backspace');
 backspaceButton.addEventListener('click', () => {
     if (isNaN(result)) {
         displayNumber = [];
@@ -107,9 +109,9 @@ backspaceButton.addEventListener('click', () => {
 
     result = null;
     updateDisplay();
-})
+})*/
 
-const invertButton = document.querySelector('.btn.polarity');
+/*const invertButton = document.querySelector('.btn.polarity');
 invertButton.addEventListener('click', () => {
     if (displayNumber.length == 0) {
         displayNumber.push('-', '0');
@@ -132,16 +134,14 @@ invertButton.addEventListener('click', () => {
     }
 
     updateDisplay();
-})
+})*/
 
 const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
-const divide = (a, b) => (b != 0) ? a / b : 'CHA0S REIGNS';
+const divide = (a, b) => /*(b != 0) ? a / b : 'CHA0S REIGNS'*/ a / b;
 
 function operate(a, b, operator) {
-    if (b === null) return a;
-    
     switch (operator) {
         case '+':
             return add(a, b);
