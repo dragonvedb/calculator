@@ -89,7 +89,7 @@ equalizeButton.addEventListener('click', () => {
     }
 })
 
-/*const clearButton = document.querySelector('.btn.clear');
+const clearButton = document.querySelector('.btn.clear');
 clearButton.addEventListener('click', () => {
     displayNumber = [];
     operand1 = null;
@@ -97,7 +97,7 @@ clearButton.addEventListener('click', () => {
     operator = null;
     result = null;
     updateDisplay();
-})*/
+})
 
 /*const backspaceButton = document.querySelector('.btn.backspace');
 backspaceButton.addEventListener('click', () => {
@@ -144,14 +144,32 @@ function operate(a, b, operator) {
     switch (operator) {
         case '+':
             result = add(a, b);
+            break;
         case '-':
             result = subtract(a, b);
+            break;
         case 'x':
             result = multiply(a, b);
+            break;
         case '\/':
-            if (!b) result = 'CHA0S RE1GNS';
+            if (!b) {
+                result = 'CHA0S RE1GNS';
+                break;
+            };
             result = divide(a, b);
+            break;
+    }
+
+    if (result >= 1000000000000000 || result <= -1000000000000000) {
+        result = 'TOO LARGE';
+    } if (result.toString().length > 16) {
+        let cutoff = 15;
+        if (result.toString().includes('-')) cutoff = 16;
+        result = result.toFixed(cutoff - Math.trunc(result).toString().length)
     }
 
     displayNumber = [...String(result)];
 }
+
+1000000000000000
+99999999999999.9999999
