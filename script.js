@@ -33,9 +33,6 @@ const dotButton = document.querySelector('.btn.dot');
 dotButton.addEventListener('click', () => {
         if (result !== null) {
             displayNumber = [];
-            operand1 = null;
-            operand2 = null;
-            operator = null;
             result = null;
         }
 
