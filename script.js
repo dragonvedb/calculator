@@ -5,6 +5,12 @@ let result = null;
 
 const display = document.querySelector('#display');
 let displayNumber = [];
+let maxLength = () => {
+    let x = 15;
+    if (displayNumber.includes('-')) x++;
+    if (displayNumber.includes('.')) x++;
+    return x;
+}
 
 const smallDisplay = document.querySelector('#small-display');
 
@@ -24,6 +30,9 @@ for (const button of numButtons) {
             result = null;
         }
 
+        if (displayNumber.length >= maxLength()) {
+            return;
+        }
         displayNumber.push(e.target.textContent);
         updateDisplay();  
     })
@@ -166,6 +175,3 @@ function operate(a, b, operator) {
     updateDisplay();
     if (isNaN(result)) displayNumber = [];
 }
-
-1000000000000000
-99999999999999.9999999
