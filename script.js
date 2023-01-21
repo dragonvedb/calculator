@@ -58,11 +58,20 @@ for (const button of opsButtons) {
             operand1 = result;
             operand2 = null;
             result = null;
-        /*} else if (operator) {
+        } else if (operand1 !== null && operator && displayNumber.length) {
             operand2 = parseFloat(displayNumber.join(''));
-            if (isNaN(operand2)) operand2 = 0;
-            operand1 = operate(operand1, operand2, operator);
-            operand2 = null;*/
+            operate(operand1, operand2, operator)
+            updateDisplay();
+            operand1 = null;
+            operand2 = null;
+            operator = null;
+            if (isNaN(result)) {
+                result = null;
+                return;
+            } else {
+                operand1 = result;
+                result = null;
+            }
         } else if (operand1 !== null) {
 
         } else {
