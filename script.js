@@ -10,7 +10,7 @@ const smallDisplay = document.querySelector('#small-display');
 
 function updateDisplay () {
     display.textContent = displayNumber.join('');
-    smallDisplay.textContent = `${(operand1 !== null) ? operand1 : ''} ${operator ? operator : ''} ${(operand2 !== null) ? operand2 : ''} ${result ? '=' : ''}`
+    smallDisplay.textContent = `${(operand1 !== null) ? operand1 : ''} ${operator ? operator : ''} ${(operand2 !== null) ? operand2 : ''} ${result !== 0 ? '=' : ''}`
 }
 
 const numButtons = document.querySelectorAll('.btn.num');
