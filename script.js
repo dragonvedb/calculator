@@ -55,11 +55,12 @@ const opsButtons = document.querySelectorAll('.btn.operator');
 for (const button of opsButtons) {
     button.addEventListener('click', (e) => {
         if (result !== null) {
-            operand1 = result
+            operand1 = result;
             operand2 = null;
             result = null;
         } else if (operator) {
             operand2 = parseFloat(displayNumber.join(''));
+            if (isNaN(operand2)) operand2 = 0;
             operand1 = operate(operand1, operand2, operator);
             operand2 = null;
         } else {
@@ -83,6 +84,7 @@ equalizeButton.addEventListener('click', () => {
         operand1 = null;
         operand2 = null;
         operator = null;
+        if (isNaN(result)) result = 0;
     }
 })
 
@@ -98,10 +100,12 @@ clearButton.addEventListener('click', () => {
 
 const backspaceButton = document.querySelector('.btn.backspace');
 backspaceButton.addEventListener('click', () => {
-    displayNumber.pop();
-
+    if (isNaN(result)) {
+        displayNumber = [];
+    } else displayNumber.pop();
     if (displayNumber[displayNumber.length - 1] == '-') displayNumber.pop();
 
+    result = null;
     updateDisplay();
 })
 
@@ -114,6 +118,7 @@ invertButton.addEventListener('click', () => {
     }
 
     if (result !== null) {
+        if (isNaN(result)) displayNumber = ['0'];
         operand1 = null;
         operand2 = null;
         operator = null;
