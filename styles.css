@@ -9,10 +9,11 @@
 }
 
 #device {
-    height: 650px;
-    width: 430px;
+    height: 700px;
+    width: 480px;
+    margin: auto;
 
-    background-color: gray;
+    background-color: darkgray;
 }
 
 #top {
@@ -47,11 +48,22 @@
 
 /*.socket,*/
 .socket button {
-    height: 100px;
+    box-sizing: content-box;
+    height: 94px;
     width: 100px;
-    border: black 2px solid;
+    border: hsl(0, 0%, 15%) 3px solid;
+    border-bottom: hsl(0, 0%, 15%) 10px solid;
+    border-radius: 6px;
     font-family: 'Syne Mono', monospace;
     font-size: 2.5em;
+
+    transition: 0.15s;
+}
+
+.socket button:active {
+    height: 94px;
+    margin-top: 7px;
+    border-bottom: hsl(0, 0%, 15%) 3px solid;
 }
 
 .btn.equalize {
