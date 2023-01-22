@@ -13,7 +13,7 @@
     width: 480px;
     margin: auto;
 
-    background-color: darkgray;
+    background-color: dimgray;
 }
 
 #top {
@@ -43,7 +43,8 @@
 #bottom {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    column-gap: 10px;
+    row-gap: 5px
 }
 
 /*.socket,*/
@@ -51,21 +52,51 @@
     box-sizing: content-box;
     height: 94px;
     width: 100px;
-    border: hsl(0, 0%, 15%) 3px solid;
-    border-bottom: hsl(0, 0%, 15%) 10px solid;
+
+    background-color: lightgray;
+    border: black 3px solid;
+    border-bottom: black 8px solid;
     border-radius: 6px;
     font-family: 'Syne Mono', monospace;
-    font-size: 2.5em;
+    font-size: 3em;
 
     transition: 0.15s;
 }
 
 .socket button:active {
     height: 94px;
-    margin-top: 7px;
-    border-bottom: hsl(0, 0%, 15%) 3px solid;
+    margin-top: 5px;
+    border-bottom: black 3px solid;
+}
+
+.btn.clear {
+    background-color:tomato;
+}
+
+.btn.polarity,
+.btn.backspace {
+    background-color: hsl(35, 90%, 55%);
+}
+
+.btn.operator {
+    margin-left: 5px;
+}
+
+.btn.operator,
+.btn.dot {
+    background-color: hsl(0, 0%,15%);
+    color:azure;
 }
 
 .btn.equalize {
-    width: 210px;
+    width: 221px;
+    background-color:hsl(35, 90%, 55%);
+}
+
+.socket button.close {
+    letter-spacing: -8px;
+}
+
+.socket button.lrg {
+    font-size: 4em;
 }
