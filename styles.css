@@ -30,7 +30,7 @@
 
 #display {
     height: 65px;
-    width: 500px;
+    width: 525px;
     text-align: end;
     font-size: 2.6em;
     border: hsl(0, 0%, 15%) 3px solid;
@@ -39,7 +39,7 @@
 
 #small-display {
     height: 32px;
-    width: 500px;
+    width: 525px;
     font-size: 1.2em;
     border: hsl(0, 0%, 15%) 3px solid;
     border-bottom: none;
@@ -48,6 +48,8 @@
 
 #display,
 #small-display {
+    padding-right: 5px;
+    text-align: end;
     background-color:darkseagreen;
     color: hsl(120, 25%, 10%);
     font-family: 'Share Tech Mono', monospace;
