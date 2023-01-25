@@ -11,15 +11,18 @@
 #device {
     height: 700px;
     width: 550px;
-    margin: auto;
+    margin-left: 30%;
+    margin-top: 50px;
 
     background-color: dimgray;
 }
 
 #top {
     height: 100px;
+    width: 500px;
     display: flex;
     flex-direction: column;
+    border: black 2px solid;
 }
 
 #display {
@@ -27,20 +30,22 @@
     width: 500px;
     /*align-self: center;*/
     text-align: end;
-    font-family: 'Share Tech Mono', monospace;
     font-size: 2.6em;
-
-    background-color:darkseagreen;
     /*border: black 2px solid;*/
 }
 
 #small-display {
     height: 32px;
     width: 500px;
-    background-color:darkseagreen;
     /*border: black 2px solid;*/
-    font-family: 'Share Tech Mono', monospace;
     font-size: 1.2em;
+}
+
+#display,
+#small-display {
+    background-color:darkseagreen;
+    color: hsl(120, 25%, 10%);
+    font-family: 'Share Tech Mono', monospace;
 }
 
 #bottom {
@@ -51,15 +56,14 @@
     margin-top: 5px;
 }
 
-/*.socket,*/
 .socket button {
     box-sizing: content-box;
     height: 94px;
     width: 110px;
 
     background-color: lightgray;
-    border: black 3px solid;
-    border-bottom: black 8px solid;
+    border: hsl(0, 0%, 5%) 3px solid;
+    border-bottom: hsl(0, 0%, 5%) 8px solid;
     border-radius: 6px;
     font-family: 'Syne Mono', monospace;
     font-size: 3em;
@@ -70,16 +74,19 @@
 .socket button:active {
     height: 94px;
     margin-top: 5px;
-    border-bottom: black 3px solid;
+    border-bottom-width: 3px;
 }
 
 .btn.clear {
-    background-color:tomato;
+    background-color:hsl(9, 100%, 64%);
+    border-color: hsl(9, 100%, 12%);
 }
 
 .btn.polarity,
-.btn.backspace {
+.btn.backspace,
+.btn.equalize {
     background-color: hsl(35, 90%, 55%);
+    border-color: hsl(35, 90%, 12%)
 }
 
 .btn.operator {
@@ -88,13 +95,13 @@
 
 .btn.operator,
 .btn.dot {
-    background-color: hsl(0, 0%,15%);
+    background-color: hsl(0, 0%,18%);
+    border-color: black;
     color:azure;
 }
 
 .btn.equalize {
     width: 241px;
-    background-color:hsl(35, 90%, 55%);
 }
 
 .socket button.close {
