@@ -33,6 +33,10 @@ for (const button of numButtons) {
         if (displayNumber.length >= maxLength()) {
             return;
         }
+
+        if (displayNumber.length <= 2 && displayNumber[displayNumber.length - 1] === '0') {
+            displayNumber.pop()
+        }
         displayNumber.push(e.target.textContent);
         updateDisplay();  
     })
