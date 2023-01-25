@@ -9,7 +9,7 @@
 }
 
 #device {
-    height: 700px;
+    height: 750px;
     width: 550px;
     margin-left: 30%;
     margin-top: 50px;
@@ -18,27 +18,32 @@
 }
 
 #top {
-    height: 100px;
-    width: 500px;
+    height: 150px;
+    /*width: 500px;*/
+    margin: auto;
+    padding-top: 25px;
     display: flex;
     flex-direction: column;
-    border: black 2px solid;
+    align-items: center;
+    background-color: brown;
 }
 
 #display {
     height: 65px;
     width: 500px;
-    /*align-self: center;*/
     text-align: end;
     font-size: 2.6em;
-    /*border: black 2px solid;*/
+    border: hsl(0, 0%, 15%) 3px solid;
+    border-top: none;
 }
 
 #small-display {
     height: 32px;
     width: 500px;
-    /*border: black 2px solid;*/
     font-size: 1.2em;
+    border: hsl(0, 0%, 15%) 3px solid;
+    border-bottom: none;
+    border-top-width: 8px;
 }
 
 #display,
@@ -53,7 +58,9 @@
     flex-wrap: wrap;
     column-gap: 10px;
     row-gap: 5px;
-    margin-top: 5px;
+    margin: auto;
+    margin-top: 25px;
+    width: 500px;
 }
 
 .socket button {
