@@ -62,13 +62,13 @@
     row-gap: 5px;
     margin: auto;
     margin-top: 25px;
-    width: 500px;
+    width: 460px;
 }
 
 .socket button {
     box-sizing: content-box;
-    height: 94px;
-    width: 110px;
+    height: 90px;
+    width: 100px;
 
     background-color: lightgray;
     border: hsl(0, 0%, 5%) 3px solid;
@@ -76,12 +76,15 @@
     border-radius: 6px;
     font-family: 'Syne Mono', monospace;
     font-size: 3em;
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
 
-    transition: 0.15s;
+    transition: 0.1s;
 }
 
 .socket button:active {
-    height: 94px;
+    height: 90px;
     margin-top: 5px;
     border-bottom-width: 3px;
 }
@@ -110,7 +113,7 @@
 }
 
 .btn.equalize {
-    width: 241px;
+    width: 221px;
 }
 
 .socket button.close {
