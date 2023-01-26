@@ -29,18 +29,18 @@
 }
 
 #display {
-    height: 65px;
+    height: 80px;
     width: 525px;
     text-align: end;
-    font-size: 2.6em;
+    font-size: 3em;
     border: hsl(0, 0%, 15%) 3px solid;
     border-top: none;
 }
 
 #small-display {
-    height: 32px;
+    height: 40px;
     width: 525px;
-    font-size: 1.2em;
+    font-size: 1.4em;
     border: hsl(0, 0%, 15%) 3px solid;
     border-bottom: none;
     border-top-width: 8px;

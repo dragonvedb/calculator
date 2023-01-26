@@ -6,7 +6,7 @@ let result = null;
 const display = document.querySelector('#display');
 let displayNumber = [];
 let maxLength = () => {
-    let x = 15;
+    let x = 12;
     if (displayNumber.includes('-')) x++;
     if (displayNumber.includes('.')) x++;
     return x;
@@ -167,11 +167,11 @@ function operate(a, b, operator) {
             break;
     }
 
-    if (result >= 1000000000000000 || result <= -1000000000000000) {
+    if (result >= 1000000000000 || result <= -1000000000000) {
         result = 'TOO LARGE';
-    } if (result.toString().length > 16) {
-        let cutoff = 15;
-        if (result.toString().includes('-')) cutoff = 16;
+    } if (result.toString().length > 13) {
+        let cutoff = 12;
+        if (result.toString().includes('-')) cutoff = 13;
         result = Number(result.toFixed(cutoff - Math.trunc(result).toString().length))
     }
 
