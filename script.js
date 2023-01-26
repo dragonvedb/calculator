@@ -47,7 +47,7 @@ for (const button of numButtons) {
             return;
         }
 
-        if (displayNumber.length <= 2 && displayNumber[displayNumber.length - 1] === '0') {
+        if ((displayNumber.length === 1 && displayNumber[0] === '0') || (displayNumber.length === 2 && displayNumber[0] === '-' && displayNumber[1] === '0')) {
             displayNumber.pop()
         }
         displayNumber.push(e.target.textContent);
