@@ -20,7 +20,13 @@ function updateDisplay () {
 }
 
 const paperSheet = document.querySelector('#paper');
+let historyLength = 0;
+
 function updatePaper () {
+    if (historyLength >= 8) {
+        paperSheet.removeChild(paperSheet.getElementsByTagName('p')[0]);
+    } else historyLength++;
+
     const equation = document.createElement('p');
     equation.textContent = `${operand1} ${operator} ${operand2} = ${result}`;
     paperSheet.appendChild(equation);
