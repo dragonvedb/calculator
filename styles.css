@@ -15,16 +15,20 @@ body {
 }
 
 #paper {
-    height: 600px;
-    width: 550px;
+    height: 650px;
+    width: 575px;
     margin-top: 125px;
     padding: 15px;
     background: linear-gradient(-45deg, antiquewhite 0%, khaki 100%);
 
     font-family: 'Reenie Beanie', cursive;
-    font-size: 1.5em;
+    font-size: 2.5em;
+    line-height: 30px;
     transform: rotate(3deg);
+}
 
+#paper p {
+    margin-bottom: 15px;
 }
 
 #device {
