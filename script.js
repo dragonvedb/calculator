@@ -19,6 +19,13 @@ function updateDisplay () {
     smallDisplay.textContent = `${(operand1 !== null) ? operand1 : ''} ${operator ? operator : ''} ${(operand2 !== null) ? operand2 : ''} ${result !== null ? '=' : ''}`
 }
 
+const paperSheet = document.querySelector('#paper');
+function updatePaper () {
+    const equation = document.createElement('p');
+    equation.textContent = `${operand1} ${operator} ${operand2} = ${result}`;
+    paperSheet.appendChild(equation);
+}
+
 const numButtons = document.querySelectorAll('.btn.num');
 for (const button of numButtons) {
     button.addEventListener('click', (e) => {
@@ -175,6 +182,7 @@ function operate(a, b, operator) {
         result = Number(result.toFixed(cutoff - Math.trunc(result).toString().length))
     }
 
+    updatePaper();
     displayNumber = [...String(result)];
     updateDisplay();
     if (isNaN(result)) displayNumber = [];
