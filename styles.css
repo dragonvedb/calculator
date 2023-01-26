@@ -10,7 +10,7 @@
 
 body {
     display: flex;
-    gap: 45px;
+    gap: 50px;
     background-color: black;
 }
 
@@ -23,14 +23,14 @@ body {
 
     font-family: 'Reenie Beanie', cursive;
     font-size: 1.5em;
-    transform: rotate(2deg);
+    transform: rotate(3deg);
 
 }
 
 #device {
     height: 775px;
     width: 560px;
-    margin-left: 30%;
+    margin-left: 25%;
     margin-top: 50px;
 
     background-color: darkslategray;
