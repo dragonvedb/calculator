@@ -8,6 +8,25 @@
 	vertical-align: baseline;
 }
 
+body {
+    display: flex;
+    gap: 45px;
+    background-color: black;
+}
+
+#paper {
+    height: 600px;
+    width: 550px;
+    margin-top: 125px;
+    padding: 15px;
+    background: linear-gradient(-45deg, antiquewhite 0%, khaki 100%);
+
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 1.5em;
+    transform: rotate(2deg);
+
+}
+
 #device {
     height: 775px;
     width: 560px;
